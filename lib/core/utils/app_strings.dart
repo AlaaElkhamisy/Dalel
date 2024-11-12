@@ -1,113 +1,81 @@
-import 'package:dalel/core/utils/app_colors.dart';
-import 'package:flutter/material.dart';
+abstract class AppStrings {
+  //TODO: All Strings
 
-// ignore: must_be_immutable
-class AppName extends StatelessWidget {
-  double size;
+  static const String appName = "Dalel",
 
-  AppName({super.key, this.size = 15});
+      // OnBoarding strings
+      skip = "Skip",
+      next = "Next",
+      createAccount = "Create Account",
+      loginNow = "Login Now",
+      //Auth Strings
+      welcome = "welcome!",
+      welcomeBack = "Welcome Back!",
+      firstName = "First Name",
+      lastName = "Last Name",
+      email = "Email",
+      password = "Password",
+      iHaveAgreeToOur = "I have agree to our",
+      termsAndConditions = "Terms and Conditions",
+      signUp = "Sign Up",
+      signIn = "Sign In",
+      alreadyHaveAnAccount = "Already have an Account",
+      dontHaveAnAccount = "Don't have an Account?",
+      forgetPassword = "Forget Password?",
+      //Home Strings
+      recommendations = "Recommendations",
+      about = "About",
+      wars = "Wars",
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      "Dalel",
-      style: TextStyle(
-          color: AppColors.deepbrown_color,
-          fontSize: size,
-          fontFamily: "Pacifico"),
-    );
-  }
+      //sreach Strings
+      sreachDeepIntoHistory = "Sreach deep into history",
+      recent = "Recent",
+      profile = "Profile",
+      account = "Account",
+      editProfile = "Edit Profile",
+      notification = "Notification",
+      general = "General",
+      setting = "Setting",
+      security = "Security",
+      privacyPolicy = "Privacy Policy",
+      logOut = "Log Out",
+
+      //bazar
+      bazar = "Bazar",
+      historicalPeriods = "Historical periods",
+      historicalCharacters = "Historical Characters",
+      historyBooks = "History Books",
+      historicalSouvenirs = "Historical Souvenirs",
+      //!Cart
+      myCart = "My Cart",
+      totalPayment = "Total Payment",
+      checkoutNow = "Checkout Now",
+      //!Payment Strings
+      checkoutScreen = "Checkout Screen",
+      deliveryAddress = "Delivery Address",
+      change = "Change",
+      items = "1 items",
+      selectedProduct = "Selected Product",
+      paymentMethod = "Payment Method",
+      confirmPayment = "Confirm Payment",
+      orderSuccess = "Order Success",
+      thankYou =
+          "Thank you for your order here and your package will be sent to your address very quickly and fast good product",
+      backToHome = "Back To Home",
+      //!Forgot password
+      forgotPasswordPage = "Forgot Password",
+      sendResetPasswordLink = "Send Reset Passwrod Link",
+      verificationNow = "Verification Now",
+      resendCode = "Resend Code",
+      verifyAccount = "Verify Account",
+      enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent to ",
+      haventReceivedVerificationCode = "Haven’t received verification code?";
 }
 
-class Main_Text extends StatelessWidget {
-  final String text;
-  const Main_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-          color: AppColors.primary_color, fontSize: 23, fontFamily: "Poppins"),
-    );
-  }
-}
-
-class label_Text extends StatelessWidget {
-  final String text;
-  const label_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-          color: AppColors.primary_color, fontSize: 18, fontFamily: "Poppins"),
-    );
-  }
-}
-
-class body_Text extends StatelessWidget {
-  final String text;
-  const body_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          TextStyle(color: Colors.black, fontSize: 15, fontFamily: "Poppins"),
-    );
-  }
-}
-
-class Big_Text extends StatelessWidget {
-  final String text;
-  const Big_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-          color: AppColors.black_color,
-          fontSize: 23,
-          fontFamily: "Poppins",
-          fontWeight: FontWeight.bold),
-    );
-  }
-}
-
-class Small_Text extends StatelessWidget {
-  final String text;
-  const Small_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: AppColors.deepgrey_color,
-        fontSize: 15,
-        fontFamily: "Poppins",
-      ),
-    );
-  }
-}
-
-class Function_Text extends StatelessWidget {
-  final String text;
-  const Function_Text({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: AppColors.offwhite_color,
-        fontSize: 18,
-        fontFamily: "Poppins",
-      ),
-    );
-  }
+abstract class FireBaseStrings {
+  static const String historicalPeriods = "historical_periods";
+  static const String name = "name";
+  static const String description = "description";
+  static const String image = "image";
+  static const String wars = "wars";
 }
