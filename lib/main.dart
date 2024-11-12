@@ -1,4 +1,7 @@
+import 'package:dalel/core/routes/app_router.dart';
+import 'package:dalel/features/splach/splach_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const Dalel());
@@ -9,13 +12,9 @@ class Dalel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Container(
-          child: Image(image: AssetImage("assets/images/Onboarding1.png")),
-        ),
-      ),
+      routerConfig: router,
     );
   }
 }
