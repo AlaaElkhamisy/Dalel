@@ -1,4 +1,5 @@
 import 'package:dalel/core/utils/app_text_style.dart';
+import 'package:dalel/features/onboarding/data/models/onboarding_model.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/Custom_Smooth_Indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -22,17 +23,6 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
       });
   }
 
-  List images = ["Onboarding1.png", "Onboarding2.png", "Onboarding3.png"];
-  List textHeaders = [
-    "Explore The history with Dalel in a smart way",
-    "From every place on earth",
-    "Using modern AI technology for better user experience"
-  ];
-  List textSubHeaders = [
-    "Using our app’s history libraries you can find many historical periods",
-    "A big variety of ancient places from all over the world",
-    "AI provide recommendations and helps you to continue the search journey"
-  ];
   @override
   Widget build(BuildContext context) {
     // حطينا الsizedbox عشنا لازم الpageviewيتحددلها limites عشان برضو ميحصلش مشكلة مع الlistview
@@ -40,7 +30,7 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
       height: 520,
       child: PageView.builder(
         controller: pageController,
-        itemCount: images.length,
+        itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -51,7 +41,7 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage("assets/images/" + images[index]))),
+                        image: AssetImage(onBoardingData[index].imagePath))),
               ),
               SizedBox(
                 height: 23,
@@ -66,7 +56,7 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
                   // وكذلك هنا حددت عدد السطور المسموح عشان ميتعدهاش وكمان الoverflowعشان الكلام يستخبى بس هيبين ان لسة في كام موجود
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  textHeaders[index],
+                  onBoardingData[index].title,
                   style: CustomTextStyles.poppins500style24
                       .copyWith(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
@@ -80,7 +70,7 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
                 child: Text(
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  textSubHeaders[index],
+                  onBoardingData[index].subtitle,
                   style: CustomTextStyles.poppins300style16
                       .copyWith(fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,
