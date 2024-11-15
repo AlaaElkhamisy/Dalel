@@ -34,6 +34,6 @@ class _Splach_ViewState extends State<Splach_View> {
 // عملنا كدا لان انا مش كل مرة هnavigate للOnboarding view فكدا ممكن ماستخدمهاش تاني
 void delayedNavigate(context) {
   Future.delayed(Duration(seconds: 2), () {
-    customNavigation(context, "/onBoarding");
+    customReplacementNavigation(context, "/onBoarding");
   });
 }
