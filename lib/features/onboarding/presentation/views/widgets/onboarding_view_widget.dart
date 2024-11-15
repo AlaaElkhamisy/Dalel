@@ -35,15 +35,23 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    // حطينا الsizedbox عشنا لازم الpageviewيتحددلها limites عشان برضو ميحصلش مشكلة مع الlistview
+    return SizedBox(
+      height: 520,
       child: PageView.builder(
         controller: pageController,
         itemCount: images.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image(
-                image: AssetImage("assets/images/" + images[index]),
+              Container(
+                //حطينا الصورة في containerعشان لو الصورة جت اكبر من الصوررة التانية ميحصلش عندي مشكلة فاجبرها تاخد مساحة الcontainerبس
+                width: 343,
+                height: 290,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/images/" + images[index]))),
               ),
               SizedBox(
                 height: 23,
@@ -55,6 +63,9 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
               Container(
                 //padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
+                  // وكذلك هنا حددت عدد السطور المسموح عشان ميتعدهاش وكمان الoverflowعشان الكلام يستخبى بس هيبين ان لسة في كام موجود
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   textHeaders[index],
                   style: CustomTextStyles.poppins500style24
                       .copyWith(fontWeight: FontWeight.bold),
@@ -67,6 +78,8 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
               Container(
                 //padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   textSubHeaders[index],
                   style: CustomTextStyles.poppins300style16
                       .copyWith(fontWeight: FontWeight.w300),

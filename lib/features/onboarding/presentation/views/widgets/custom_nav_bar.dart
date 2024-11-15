@@ -13,7 +13,8 @@ class Custom_Nav_Bar extends StatelessWidget {
           alignment: Alignment.topRight,
           child: Text(
             AppStrings.skip,
-            style: CustomTextStyles.poppins400style20,
+            style: CustomTextStyles.poppins400style20
+                .copyWith(color: Colors.black),
           )),
     );
   }

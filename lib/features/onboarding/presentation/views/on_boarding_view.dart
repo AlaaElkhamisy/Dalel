@@ -15,13 +15,17 @@ class OnBoardingView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: 15,
           ),
-          child: Column(
+          //حطينا هنا الonboarding viewفي listview عشان اخلي الشاشة بتاعتي scrollable عشان لو ابعاد التليفون عندي اتغيرت ميحصلش مشكلة
+          child: ListView(
             children: [
               Custom_Nav_Bar(),
               SizedBox(
                 height: 77,
               ),
               OnBoarding_Body(),
+              SizedBox(
+                height: 77,
+              ),
               CustomBtn(
                 text: AppStrings.next,
               ),
