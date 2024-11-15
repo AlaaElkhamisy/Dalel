@@ -39,6 +39,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 height: 68,
               ),
               OnBoarding_Body(
+                // حطينا الonPageChanged عشان اعمل update لل index كل لما الصفحة تتغير
                 onPageChanged: (index) {
                   setState(() {
                     currentIndex = index;
