@@ -1,5 +1,7 @@
+import 'package:dalel/core/function/navigation.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/Custom_Smooth_Indicator.dart';
+import 'package:dalel/features/onboarding/presentation/views/widgets/next_page.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding_Body extends StatefulWidget {
@@ -72,7 +74,27 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
                       .copyWith(fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 100),
+                child: Next_Page(
+                  onTap: () {
+                    pageController?.nextPage(
+                        duration: Duration(milliseconds: 1000),
+                        curve: Curves.easeInCubic);
+                    if (pageController!.page! < 2) {
+                      pageController?.nextPage(
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.easeIn);
+                    } else {
+                      customNavigation(context, "/home");
+                    }
+                  },
+                  text: pageController!.hasClients
+                      ? (pageController?.page == 2 ? "Create Account" : "Next")
+                      : "Next",
+                ),
+              ),
             ],
           );
         },
