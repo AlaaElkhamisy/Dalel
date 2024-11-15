@@ -12,8 +12,8 @@ class Next_Page extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 50,
-        width: 300,
+        height: 56,
+        width: double.infinity,
         decoration: BoxDecoration(
             color: AppColors.primary_color,
             borderRadius: BorderRadius.circular(8)),
