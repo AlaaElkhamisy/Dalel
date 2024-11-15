@@ -4,6 +4,7 @@ import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:dalel/core/widgets/custom_btn.dart';
 import 'package:dalel/features/onboarding/data/models/onboarding_model.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/custom_nav_bar.dart';
+import 'package:dalel/features/onboarding/presentation/views/widgets/getButtons.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/onboarding_view_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -48,38 +49,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               SizedBox(
                 height: 70,
               ),
-              currentIndex == onBoardingData.length - 1
-                  ? Column(
-                      children: [
-                        CustomBtn(
-                          text: AppStrings.createAccount,
-                          onPressed: () {
-                            customNavigation(context, "/signUp");
-                          },
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            customNavigation(context, "/signIn");
-                          },
-                          child: Text(
-                            AppStrings.loginNow,
-                            style: CustomTextStyles.poppins300style16
-                                .copyWith(fontWeight: FontWeight.w400),
-                          ),
-                        )
-                      ],
-                    )
-                  : CustomBtn(
-                      onPressed: () {
-                        _controller.nextPage(
-                            duration: Duration(milliseconds: 200),
-                            curve: Curves.bounceIn);
-                      },
-                      text: AppStrings.next,
-                    ),
+              Getbuttons(currentIndex: currentIndex, controller: _controller),
               SizedBox(
                 height: 20,
               )
