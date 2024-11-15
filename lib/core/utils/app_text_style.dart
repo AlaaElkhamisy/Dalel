@@ -33,7 +33,7 @@ abstract class CustomTextStyles {
     fontFamily: "Poppins",
   );
   static const poppins500style24 = TextStyle(
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: FontWeight.w500,
     color: Colors.black,
     fontFamily: "Poppins",
@@ -45,7 +45,7 @@ abstract class CustomTextStyles {
     fontFamily: "Poppins",
   );
   static const poppins300style16 = TextStyle(
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.w300,
     color: Colors.black,
     fontFamily: "Poppins",

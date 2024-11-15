@@ -11,4 +11,5 @@ abstract class AppColors {
   static Color lightgrey_color = const Color(0xffB4B4B4);
   static Color grey_color = const Color(0xff999999);
   static Color black_color = const Color(0xff333333);
+  static Color dots_color = const Color(0xffD9D9D9);
 }
