@@ -40,43 +40,40 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
         controller: pageController,
         itemCount: images.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15),
-            child: Column(
-              children: [
-                Image(
-                  image: AssetImage("assets/images/" + images[index]),
+          return Column(
+            children: [
+              Image(
+                image: AssetImage("assets/images/" + images[index]),
+              ),
+              SizedBox(
+                height: 23,
+              ),
+              Custom_Smooth_Page_Indicator(controller: pageController!),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                //padding: const EdgeInsets.only(left: 15, right: 15),
+                child: Text(
+                  textHeaders[index],
+                  style: CustomTextStyles.poppins500style24
+                      .copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
-                SizedBox(
-                  height: 23,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                //padding: const EdgeInsets.only(left: 15, right: 15),
+                child: Text(
+                  textSubHeaders[index],
+                  style: CustomTextStyles.poppins300style16
+                      .copyWith(fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.center,
                 ),
-                Custom_Smooth_Page_Indicator(controller: pageController!),
-                SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  //padding: const EdgeInsets.only(left: 15, right: 15),
-                  child: Text(
-                    textHeaders[index],
-                    style: CustomTextStyles.poppins500style24
-                        .copyWith(fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Container(
-                  //padding: const EdgeInsets.only(left: 15, right: 15),
-                  child: Text(
-                    textSubHeaders[index],
-                    style: CustomTextStyles.poppins300style16
-                        .copyWith(fontWeight: FontWeight.w300),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),

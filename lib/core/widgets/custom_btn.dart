@@ -4,8 +4,9 @@ import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomBtn extends StatelessWidget {
-  const CustomBtn({super.key, this.color});
+  const CustomBtn({super.key, this.color, required this.text});
   final Color? color;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,7 +19,7 @@ class CustomBtn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10))),
         onPressed: () {},
         child: Text(
-          AppStrings.next,
+          text,
           style: CustomTextStyles.poppins500style18
               .copyWith(color: AppColors.offwhite_color),
         ),
