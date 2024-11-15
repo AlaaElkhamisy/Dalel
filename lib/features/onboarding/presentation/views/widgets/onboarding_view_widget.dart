@@ -3,33 +3,20 @@ import 'package:dalel/features/onboarding/data/models/onboarding_model.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/Custom_Smooth_Indicator.dart';
 import 'package:flutter/material.dart';
 
-class OnBoarding_Body extends StatefulWidget {
-  OnBoarding_Body({super.key});
+class OnBoarding_Body extends StatelessWidget {
+  OnBoarding_Body({super.key, required this.controller, this.onPageChanged});
 
+  final PageController? controller;
+  final Function(int)? onPageChanged;
   @override
-  State<OnBoarding_Body> createState() => _OnBoarding_BodyState();
-}
-
-class _OnBoarding_BodyState extends State<OnBoarding_Body> {
-  PageController? pageController;
-
-  @override
-  void initState() {
-    super.initState();
-    // حطينا addlistenter عشان أعمل setState في كل مرة عشان الpageController يرجعلي الصفحة اللي انا فيها
-    pageController = PageController(initialPage: 0)
-      ..addListener(() {
-        setState(() {});
-      });
-  }
-
   @override
   Widget build(BuildContext context) {
     // حطينا الsizedbox عشنا لازم الpageviewيتحددلها limites عشان برضو ميحصلش مشكلة مع الlistview
     return SizedBox(
       height: 520,
       child: PageView.builder(
-        controller: pageController,
+        onPageChanged: onPageChanged,
+        controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -46,7 +33,7 @@ class _OnBoarding_BodyState extends State<OnBoarding_Body> {
               SizedBox(
                 height: 23,
               ),
-              Custom_Smooth_Page_Indicator(controller: pageController!),
+              Custom_Smooth_Page_Indicator(controller: controller!),
               SizedBox(
                 height: 30,
               ),
