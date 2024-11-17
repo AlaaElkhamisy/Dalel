@@ -3,6 +3,7 @@ import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:dalel/core/widgets/custom_btn.dart';
 import 'package:dalel/features/onboarding/data/models/onboarding_model.dart';
+import 'package:dalel/features/onboarding/presentation/views/functions/onboarding.dart';
 import 'package:flutter/material.dart';
 
 class Getbuttons extends StatelessWidget {
@@ -18,7 +19,8 @@ class Getbuttons extends StatelessWidget {
           CustomBtn(
             text: AppStrings.createAccount,
             onPressed: () {
-              customNavigation(context, "/signUp");
+              OnBoardingVisited();
+              customReplacementNavigation(context, "/signUp");
             },
           ),
           SizedBox(
@@ -26,7 +28,8 @@ class Getbuttons extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              customNavigation(context, "/signIn");
+              OnBoardingVisited();
+              customReplacementNavigation(context, "/signIn");
             },
             child: Text(
               AppStrings.loginNow,

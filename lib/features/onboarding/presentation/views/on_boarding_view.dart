@@ -1,6 +1,5 @@
-import 'package:dalel/core/database/cache/cache_helper.dart';
 import 'package:dalel/core/function/navigation.dart';
-import 'package:dalel/core/services/service_locator.dart';
+import 'package:dalel/features/onboarding/presentation/views/functions/onboarding.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/custom_nav_bar.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/getButtons.dart';
 import 'package:dalel/features/onboarding/presentation/views/widgets/onboarding_view_widget.dart';
@@ -31,8 +30,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               Custom_Nav_Bar(
                 onTap: () {
                   // we will call Cache_Helper to save that the user pressed on the button layouted in the onboareding view in the local database
-                  getIt<CacheHelper>()
-                      .saveData(key: "isOnboardingVisited", value: true);
+                  OnBoardingVisited();
                   customReplacementNavigation(context, "/signUp");
                 },
               ),
