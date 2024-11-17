@@ -1,5 +1,6 @@
 import 'package:dalel/core/database/cache/cache_helper.dart';
 import 'package:dalel/core/function/navigation.dart';
+import 'package:dalel/core/services/service_locator.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _Splach_ViewState extends State<Splach_View> {
   void initState() {
     // fales if this is the first time to the user to user our app so, this key isn't saved in the database before
     bool isOnboardingVisited =
-        CacheHelper().getData(key: "isOnboardingVisited") ?? false;
+        getIt<CacheHelper>().getData(key: "isOnboardingVisited") ?? false;
     if (isOnboardingVisited == true) {
       delayedNavigate(context, "/signUp");
     } else {
