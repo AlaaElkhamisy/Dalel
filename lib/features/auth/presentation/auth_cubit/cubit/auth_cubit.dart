@@ -1,8 +1,7 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:dalel/features/auth/presentation/auth_cubit/cubit/auth_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'auth_state.dart';
-
+// هنا هنضيف الlogic
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 }

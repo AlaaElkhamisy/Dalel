@@ -1,6 +1,4 @@
-part of 'auth_cubit.dart';
-
-@immutable
-sealed class AuthState {}
+//هنا هنضيف ال States
+class AuthState {}
 
 final class AuthInitial extends AuthState {}
