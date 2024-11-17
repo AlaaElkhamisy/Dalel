@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 void main() async {
   //قبل ما ابدا اشتغل بالlocal database هاقوله يستدعي الinit state من ال cachehelper
   WidgetsFlutterBinding.ensureInitialized();
+  //خليناها await وحطينا ال async عشان لو ال init اصلا كدا في ال cachehelper
   await CacheHelper().init();
   runApp(const Dalel());
 }

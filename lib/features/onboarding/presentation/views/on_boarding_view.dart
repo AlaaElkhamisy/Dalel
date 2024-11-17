@@ -32,7 +32,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   // we will call Cache_Helper to save that the user pressed on the button layouted in the onboareding view in the local database
                   CacheHelper()
                       .saveData(key: "isOnboardingVisited", value: true);
-                  customNavigation(context, "/signUp");
+                  customReplacementNavigation(context, "/signUp");
                 },
               ),
               SizedBox(
