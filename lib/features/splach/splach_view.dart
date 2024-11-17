@@ -1,3 +1,4 @@
+import 'package:dalel/core/database/cache/cache_helper.dart';
 import 'package:dalel/core/function/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
@@ -13,7 +14,15 @@ class Splach_View extends StatefulWidget {
 class _Splach_ViewState extends State<Splach_View> {
   @override
   void initState() {
-    delayedNavigate(context);
+    // fales if this is the first time to the user to user our app so, this key isn't saved in the database before
+    bool isOnboardingVisited =
+        CacheHelper().getData(key: "isOnboardingVisited") ?? false;
+    if (isOnboardingVisited == true) {
+      delayedNavigate(context, "/signUp");
+    } else {
+      delayedNavigate(context, "/onBoarding");
+    }
+
     // TODO: implement initState
     super.initState();
   }
@@ -32,8 +41,8 @@ class _Splach_ViewState extends State<Splach_View> {
 }
 
 // عملنا كدا لان انا مش كل مرة هnavigate للOnboarding view فكدا ممكن ماستخدمهاش تاني
-void delayedNavigate(context) {
+void delayedNavigate(context, path) {
   Future.delayed(Duration(seconds: 2), () {
-    customReplacementNavigation(context, "/onBoarding");
+    customReplacementNavigation(context, path);
   });
 }
