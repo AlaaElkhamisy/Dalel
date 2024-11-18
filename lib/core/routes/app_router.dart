@@ -10,25 +10,25 @@ import 'package:go_router/go_router.dart';
 final GoRouter router = GoRouter(routes: [
   GoRoute(
     path: "/",
-    builder: (context, state) => Splach_View(),
+    builder: (context, state) => const Splach_View(),
   ),
   GoRoute(
     path: "/onBoarding",
-    builder: (context, state) => OnBoardingView(),
+    builder: (context, state) => const OnBoardingView(),
   ),
   // هاحط ال cubit فوق الscreens اللي لها cubit
   GoRoute(
     path: "/signUp",
     builder: (context, state) => BlocProvider(
       create: (context) => getIt<AuthCubit>(),
-      child: SignUp(),
+      child: const SignUp(),
     ),
   ),
   GoRoute(
     path: "/signIn",
     builder: (context, state) => BlocProvider(
       create: (context) => getIt<AuthCubit>(),
-      child: SignIn(),
+      child: const SignIn(),
     ),
   ),
 ]);

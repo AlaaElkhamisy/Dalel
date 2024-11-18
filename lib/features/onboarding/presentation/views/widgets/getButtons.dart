@@ -23,7 +23,7 @@ class Getbuttons extends StatelessWidget {
               customReplacementNavigation(context, "/signUp");
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           GestureDetector(
@@ -43,7 +43,8 @@ class Getbuttons extends StatelessWidget {
       return CustomBtn(
         onPressed: () {
           controller.nextPage(
-              duration: Duration(milliseconds: 200), curve: Curves.bounceIn);
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.bounceIn);
         },
         text: AppStrings.next,
       );

@@ -6,7 +6,7 @@ import 'package:dalel/features/onboarding/presentation/views/widgets/onboarding_
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {
-  OnBoardingView({super.key});
+  const OnBoardingView({super.key});
 
   @override
   State<OnBoardingView> createState() => _OnBoardingViewState();
@@ -25,7 +25,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           ),
           //حطينا هنا الonboarding viewفي listview عشان اخلي الشاشة بتاعتي scrollable عشان لو ابعاد التليفون عندي اتغيرت ميحصلش مشكلة
           child: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
               Custom_Nav_Bar(
                 onTap: () {
@@ -34,7 +34,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   customReplacementNavigation(context, "/signUp");
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 68,
               ),
               OnBoarding_Body(
@@ -46,11 +46,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 },
                 controller: _controller,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 70,
               ),
               Getbuttons(currentIndex: currentIndex, controller: _controller),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               )
             ],
