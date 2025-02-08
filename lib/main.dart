@@ -1,4 +1,5 @@
 import 'package:dalel/core/database/cache/cache_helper.dart';
+import 'package:dalel/core/function/check_state_changes.dart';
 import 'package:dalel/core/routes/app_router.dart';
 import 'package:dalel/core/services/service_locator.dart';
 import 'package:dalel/core/utils/app_colors.dart';
@@ -11,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setup_Service_Locator();
+  checkStateChanges();
   //خليناها await وحطينا ال async عشان لو ال init اصلا كدا في ال cachehelper
   await getIt<CacheHelper>().init();
   runApp(const Dalel());
