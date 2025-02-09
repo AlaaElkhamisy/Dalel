@@ -21,7 +21,7 @@ class _Splach_ViewState extends State<Splach_View> {
         getIt<CacheHelper>().getData(key: "isOnboardingVisited") ?? false;
     if (isOnboardingVisited == true) {
       FirebaseAuth.instance.currentUser == null
-          ? delayedNavigate(context, "/signUp")
+          ? delayedNavigate(context, "/signIn")
           : delayedNavigate(context, "/home");
     } else {
       delayedNavigate(context, "/onBoarding");

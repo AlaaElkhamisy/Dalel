@@ -10,18 +10,18 @@ class CustomTextFormField extends StatelessWidget {
       this.onChanged,
       this.onFieldSubmitted,
       this.suffixIcon,
-      this.obscureText = false});
+      this.obscureText});
   final String labelText;
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
   final Widget? suffixIcon;
-  final bool obscureText;
+  final bool? obscureText;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 8, left: 8, top: 24),
       child: TextFormField(
-        obscureText: obscureText,
+        obscureText: obscureText ?? false,
         validator: (value) {
           if (value!.isEmpty) {
             return "This field is required";
