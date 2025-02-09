@@ -3,6 +3,7 @@ import 'package:dalel/core/function/navigation.dart';
 import 'package:dalel/core/services/service_locator.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Splach_View extends StatefulWidget {
@@ -19,7 +20,9 @@ class _Splach_ViewState extends State<Splach_View> {
     bool isOnboardingVisited =
         getIt<CacheHelper>().getData(key: "isOnboardingVisited") ?? false;
     if (isOnboardingVisited == true) {
-      delayedNavigate(context, "/signUp");
+      FirebaseAuth.instance.currentUser == null
+          ? delayedNavigate(context, "/signUp")
+          : delayedNavigate(context, "/home");
     } else {
       delayedNavigate(context, "/onBoarding");
     }

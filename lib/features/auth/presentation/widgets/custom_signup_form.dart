@@ -25,7 +25,7 @@ class _CustomSignUpFormState extends State<CustomSignUpForm> {
       listener: (context, state) {
         if (state is SignUpSuccessState) {
           showToast("Account created successfully", Colors.green);
-          customReplacementNavigation(context, "/signIn");
+          customReplacementNavigation(context, "/home");
         } else if (state is SignUpFailuerState) {
           showToast(state.errMessage, Colors.red);
         }
