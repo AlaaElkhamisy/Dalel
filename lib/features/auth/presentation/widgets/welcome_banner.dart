@@ -16,11 +16,8 @@ class WelcomeBanner extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(AppStrings.appName,
-              style: CustomTextStyles.pacifico700style32.copyWith(
-                fontFamily: "Saira",
-              )),
-          const SizedBox(height: 18),
+          const Text(AppStrings.appName,
+              style: CustomTextStyles.pacifico700style42),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,

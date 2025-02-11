@@ -56,8 +56,8 @@ abstract class CustomTextStyles {
     color: AppColors.deepbrown_color,
     fontFamily: "Poppins",
   );
-  static const pacifico700style32 = TextStyle(
-    fontSize: 32,
+  static const pacifico700style42 = TextStyle(
+    fontSize: 42,
     fontWeight: FontWeight.w700,
     color: Colors.white,
     fontFamily: "Pacifico",
