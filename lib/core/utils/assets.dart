@@ -15,11 +15,11 @@ class Assets {
 
   /// Assets for imagesForgotPassword
   /// assets/images/forgotPassword.png
-  static const String imagesForgotPassword = "assets/images/forgotPassword.png";
+  static const String imagesForgotPassword = "assets/images/Frame1.png";
 
   /// Assets for imagesFrame
   /// assets/images/Frame.png
-  static const String imagesFrame = "assets/images/Frame.png";
+  //static const String imagesFrame = "assets/images/Frame1.png";
 
   /// Assets for imagesFrame2
   /// assets/images/Frame2.png

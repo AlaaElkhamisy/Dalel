@@ -64,6 +64,8 @@ abstract class AppStrings {
       backToHome = "Back To Home",
       //!Forgot password
       forgotPasswordPage = "Forgot Password",
+      forgotPasswordSubtitle =
+          "Enter your registered email below to receive password reset instruction",
       sendResetPasswordLink = "Send Reset Passwrod Link",
       verificationNow = "Verification Now",
       resendCode = "Resend Code",

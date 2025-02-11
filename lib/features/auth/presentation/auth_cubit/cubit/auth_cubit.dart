@@ -13,12 +13,14 @@ class AuthCubit extends Cubit<AuthState> {
   bool? obscurePasswordTextValue = true;
   GlobalKey<FormState> signupFormKey = GlobalKey();
   GlobalKey<FormState> signInFormKey = GlobalKey();
+  GlobalKey<FormState> resetPasswordFormKey = GlobalKey();
   bool? termsAndConditionCheckBox = false;
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email!, password: password!);
+      verifyAccout();
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
       if (e.code == "weak-password") {
@@ -27,6 +29,10 @@ class AuthCubit extends Cubit<AuthState> {
       } else if (e.code == "email-already-in-use") {
         emit(SignUpFailuerState(
             errMessage: "The account already exists for that email"));
+      } else if (e.code == "invalid-email") {
+        emit(SignUpFailuerState(errMessage: "The email is invalid."));
+      } else {
+        emit(SignUpFailuerState(errMessage: e.code));
       }
     } catch (e) {
       emit(SignUpFailuerState(errMessage: e.toString()));
@@ -38,7 +44,11 @@ class AuthCubit extends Cubit<AuthState> {
     emit(TermsAndConditionUpdateState());
   }
 
-  void obscurePasswordText() {
+  verifyAccout() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+  }
+
+  obscurePasswordText() {
     if (obscurePasswordTextValue == true) {
       obscurePasswordTextValue = false;
     } else {
@@ -64,6 +74,16 @@ class AuthCubit extends Cubit<AuthState> {
       }
     } catch (e) {
       emit(SignInFailuerState(errMessage: e.toString()));
+    }
+  }
+
+  resetPasswordWithLink() async {
+    try {
+      emit(ResetPasswordLoadingState());
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email!);
+      emit(ResetPasswordSuccessState());
+    } catch (e) {
+      emit(ResetPasswordFailuerState(errMessage: e.toString()));
     }
   }
 }
