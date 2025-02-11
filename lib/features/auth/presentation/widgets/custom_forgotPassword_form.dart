@@ -19,9 +19,7 @@ class CustomForgotpasswordForm extends StatelessWidget {
         if (state is ResetPasswordSuccessState) {
           showToast("Check your email to reset the password",
               AppColors.primary_color);
-          // FirebaseAuth.instance.currentUser!.emailVerified
           customReplacementNavigation(context, "/signIn");
-          //showToast("Please, verify your account", Colors.grey);
         } else if (state is ResetPasswordFailuerState) {
           showToast(state.errMessage, Colors.red);
         }
