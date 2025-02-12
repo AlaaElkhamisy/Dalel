@@ -31,12 +31,11 @@ class Assets {
 
   /// Assets for imagesHomeIcon
   /// assets/images/home-icon.svg
-  static const String imagesHomeIcon = "assets/images/home-icon.svg";
+  static const String imagesHomeIcon = "assets/images/homeIcon.svg";
 
   /// Assets for imagesHomeIconActive
   /// assets/images/home-icon-active.svg
-  static const String imagesHomeIconActive =
-      "assets/images/home-icon-active.svg";
+  static const String imagesHomeIconActive = "assets/images/fillHomeIcon.svg";
 
   /// Assets for imagesMenu
   /// assets/images/menu.svg
@@ -56,28 +55,31 @@ class Assets {
 
   /// Assets for imagesPerson
   /// assets/images/person.svg
-  static const String imagesPerson = "assets/images/person.svg";
+  static const String imagesPerson = "assets/images/Person.svg";
 
   /// Assets for imagesPersonActive
   /// assets/images/person-active.svg
-  static const String imagesPersonActive = "assets/images/person-active.svg";
+  static const String imagesPersonActive = "assets/images/solidPerson.svg";
 
   /// Assets for imagesSearch
   /// assets/images/search.svg
-  static const String imagesSearch = "assets/images/search.svg";
+  static const String imagesSearch = "assets/images/Search.svg";
 
   /// Assets for imagesSearchActive
   /// assets/images/search-active.svg
-  static const String imagesSearchActive = "assets/images/search-active.svg";
+  static const String imagesSearchActive = "assets/images/SearchActive.svg";
+
+  /// Assets for imagesWhiteSearch
+  static const String imagesWhiteSearchIcon = "assets/images/whiteSearch.svg";
 
   /// Assets for imagesShoppingCart
   /// assets/images/shopping-cart.svg
-  static const String imagesShoppingCart = "assets/images/shopping-cart.svg";
+  static const String imagesShoppingCart = "assets/images/shoppingCart.svg";
 
   /// Assets for imagesShoppingCartActive
   /// assets/images/shopping-cart-active.svg
   static const String imagesShoppingCartActive =
-      "assets/images/shopping-cart-active.svg";
+      "assets/images/fillShoppingCart.svg";
 
   /// Assets for imagesSucccesOrder
   /// assets/images/succcesOrder.png

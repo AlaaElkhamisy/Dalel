@@ -22,7 +22,7 @@ class CustomSignInForm extends StatelessWidget {
         if (state is SignInSuccessState) {
           // showToast("Welcome back", AppColors.primary_color);
           FirebaseAuth.instance.currentUser!.emailVerified
-              ? customReplacementNavigation(context, "/home")
+              ? customReplacementNavigation(context, "/homeNavBar")
               : showToast("Please, verify your account", Colors.grey);
           ;
         } else if (state is SignInFailuerState) {

@@ -2,7 +2,7 @@ import 'package:dalel/features/auth/presentation/auth_cubit/cubit/auth_cubit.dar
 import 'package:dalel/features/auth/presentation/views/forgot_password.dart';
 import 'package:dalel/features/auth/presentation/views/signIn.dart';
 import 'package:dalel/features/auth/presentation/views/sign_up.dart';
-import 'package:dalel/features/home/presentation/views/home_view.dart';
+import 'package:dalel/features/home/presentation/widgets/home_nav_bar.dart';
 import 'package:dalel/features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:dalel/features/splach/splach_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,7 +40,7 @@ final GoRouter router = GoRouter(routes: [
     ),
   ),
   GoRoute(
-    path: "/home",
-    builder: (context, state) => const HomeView(),
+    path: "/homeNavBar",
+    builder: (context, state) => const HomeNavBarWidget(),
   ),
 ]);
