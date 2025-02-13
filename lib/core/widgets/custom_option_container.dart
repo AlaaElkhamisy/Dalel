@@ -1,10 +1,10 @@
 import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/features/home/presentation/widgets/custom_category_text.dart';
-import 'package:dalel/core/widgets/custom_image_container.dart';
+import 'package:dalel/core/widgets/custom_option_image_container.dart';
 import 'package:flutter/material.dart';
 
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, required this.imagePath});
+class CustomOptionContainer extends StatelessWidget {
+  const CustomOptionContainer({super.key, required this.imagePath});
   final String imagePath;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class CustomContainer extends StatelessWidget {
             width: 63,
             child: CustomCategoryText(text: "Ancient Egypt"),
           ),
-          CustomImageContainer(image: imagePath)
+          CustomOptionImageContainer(image: imagePath)
         ],
       ),
     );

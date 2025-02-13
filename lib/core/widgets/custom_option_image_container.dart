@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomImageContainer extends StatelessWidget {
-  const CustomImageContainer({super.key, required this.image});
+class CustomOptionImageContainer extends StatelessWidget {
+  const CustomOptionImageContainer({super.key, required this.image});
   final String image;
   @override
   Widget build(BuildContext context) {

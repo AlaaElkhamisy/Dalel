@@ -1,4 +1,4 @@
-import 'package:dalel/core/widgets/custom_container.dart';
+import 'package:dalel/core/widgets/custom_option_container.dart';
 import 'package:flutter/material.dart';
 
 class HistoricalPeriods extends StatelessWidget {
@@ -9,8 +9,8 @@ class HistoricalPeriods extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CustomContainer(imagePath: "assets/images/Frame27.png"),
-        CustomContainer(imagePath: "assets/images/Frame27.png")
+        CustomOptionContainer(imagePath: "assets/images/Frame27.png"),
+        CustomOptionContainer(imagePath: "assets/images/Frame27.png")
       ],
     );
   }
