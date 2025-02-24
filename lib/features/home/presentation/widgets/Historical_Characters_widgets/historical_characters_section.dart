@@ -11,9 +11,10 @@ class HistoricalCharactersSection extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 32),
         CustomHeaderText(text: AppStrings.historicalCharacters),
         SizedBox(height: 16),
-        HistoricalCharactersListView()
+        HistoricalCharactersListView(),
       ],
     );
   }

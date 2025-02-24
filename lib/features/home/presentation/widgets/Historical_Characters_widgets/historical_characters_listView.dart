@@ -1,5 +1,6 @@
 import 'package:dalel/features/home/presentation/widgets/custom_category_item.dart';
 import 'package:flutter/material.dart';
+import 'package:dalel/features/home/data/characters_data.dart';
 
 class HistoricalCharactersListView extends StatelessWidget {
   const HistoricalCharactersListView({super.key});
@@ -12,11 +13,13 @@ class HistoricalCharactersListView extends StatelessWidget {
         clipBehavior: Clip.none,
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
+        itemCount: CharactersData.charactersNames.length,
         itemBuilder: (context, index) {
-          return const CustomCategoryItem(
-            text: "Napoleon",
-            imagePath: "assets/images/char1.png",
+          String characterName = CharactersData.charactersNames[index];
+          String characterImage = CharactersData.images[index];
+          return CustomCategoryItem(
+            text: characterName,
+            imagePath: characterImage,
           );
         },
         separatorBuilder: (BuildContext context, int index) {

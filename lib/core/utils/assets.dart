@@ -92,4 +92,20 @@ class Assets {
   /// Assets for imagesVector2
   /// assets/images/vector2.svg
   static const String imagesVector2 = "assets/images/Vector2.svg";
+
+//characters images
+  static const String lionheart = "assets/images/Richard.png";
+  static const String napoleon = "assets/images/napolean.png";
+  static const String salahAlDin = "assets/images/SalahalDin.png";
+  static const String qianlong = "assets/images/Qianlong.png";
+
+  //Souvenirs images
+  static const String oldBooks = "assets/images/oldBooks.png";
+  static const String puzzles = "assets/images/puzzles.png";
+  static const String oldStuff = "assets/images/oldStuff.png";
+  static const String oldClothes = "assets/images/oldClothes.png";
+
+  //Periods images
+  static const String islamicEra = "assets/images/islamicEra.png";
+  static const String isphix = "assets/images/isphix.png";
 }

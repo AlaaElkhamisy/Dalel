@@ -27,7 +27,7 @@ class CustomCategoryItem extends StatelessWidget {
         children: [
           CustomCategoryImage(image: imagePath),
           const SizedBox(height: 7),
-          CustomCategoryText(text: text),
+          Expanded(child: CustomCategoryText(text: text)),
         ],
       ),
     );

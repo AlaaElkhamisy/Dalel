@@ -1,3 +1,4 @@
+import 'package:dalel/features/home/data/souvenirs_data.dart';
 import 'package:dalel/features/home/presentation/widgets/custom_category_item.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,13 @@ class HistoricalSouvenirsListView extends StatelessWidget {
         clipBehavior: Clip.none,
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
+        itemCount: SouvenirsData.souvenirNames.length,
         itemBuilder: (context, index) {
-          return const CustomCategoryItem(
-            text: "Old Books",
-            imagePath: "assets/images/Frame41.png",
+          String souvenirNames = SouvenirsData.souvenirNames[index];
+          String souvenirImages = SouvenirsData.images[index];
+          return CustomCategoryItem(
+            text: souvenirNames,
+            imagePath: souvenirImages,
           );
         },
         separatorBuilder: (BuildContext context, int index) {

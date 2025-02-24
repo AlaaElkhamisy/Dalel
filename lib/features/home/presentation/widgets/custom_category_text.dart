@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class CustomCategoryText extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return AutoSizeText(
       overflow: TextOverflow.ellipsis,
       maxLines: 2,
       textAlign: TextAlign.center,

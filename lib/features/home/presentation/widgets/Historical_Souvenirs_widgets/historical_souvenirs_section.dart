@@ -11,6 +11,7 @@ class HistoricalSouvenirsSection extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 32),
         CustomHeaderText(text: AppStrings.historicalSouvenirs),
         SizedBox(height: 16),
         HistoricalSouvenirsListView()
